@@ -36,11 +36,11 @@ export const EnviromentButton = ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.shape,
-    borderRadius: 12,
     width: 76,
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 12,
     marginRight: 5
   },
   containerActive: {

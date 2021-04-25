@@ -62,10 +62,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: fonts.heading,
-    fontSize: 32,
+    fontSize: 28,
     textAlign: 'center',
     color: colors.heading,
-    marginTop: 38
+    marginTop: 38,
+    lineHeight: 32
   },
   image: {
     height: Dimensions.get('window').width * 0.7

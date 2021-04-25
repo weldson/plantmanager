@@ -16,11 +16,15 @@ export const Header = () => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.greeting}></Text>
-        <Text style={styles.username}></Text>
+        <Text style={styles.greeting}>
+          Olá,
+        </Text>
+        <Text style={styles.userName}>
+          John Doe
+        </Text>
       </View>
 
-      <Image style={styles.userimage} source={userImg} />
+      <Image style={styles.userImage} source={userImg} />
     </View>
   )
 }
@@ -32,23 +36,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: 20,
-    marginTop: Constants.statusBarHeight,
-    padding: 20
+    marginTop: Constants.statusBarHeight
   },
   greeting: {
     fontSize: 32,
     color: colors.heading,
     fontFamily: fonts.text
   },
-  username: {
+  userName: {
     fontSize: 32,
     fontFamily: fonts.heading,
     color: colors.heading,
     lineHeight: 40
   },
-  userimage: {
+  userImage: {
     width: 70,
     height: 70,
-    borderRadius: 35
+    borderRadius: 40
   }
 })
