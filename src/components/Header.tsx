@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Constants from 'expo-constants'
 import {
   View,
@@ -6,6 +6,7 @@ import {
   Image,
   StyleSheet
 } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
@@ -13,6 +14,17 @@ import fonts from '../styles/fonts'
 import userImg from '../assets/profile.png'
 
 export const Header = () => {
+  const [userName, setUserName] = useState<String>()
+
+  useEffect(() => {
+    async function loadStorageUsername() {
+      const user = await AsyncStorage.getItem('@plantmanager:user')
+      setUserName(user || '')
+    }
+
+    loadStorageUsername()
+  }, [])
+
   return (
     <View style={styles.container}>
       <View>
@@ -20,7 +32,7 @@ export const Header = () => {
           Olá,
         </Text>
         <Text style={styles.userName}>
-          John Doe
+          {userName}
         </Text>
       </View>
 
